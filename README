@@ -1,0 +1,28 @@
+stl-api-gateway
+===============
+
+Implementation of OMI API for the Sawtooth Lake OMI Transaction Family.
+
+Configure
+---------
+
+Use the OMI_URL environment variable to point the application to the
+Sawtooth Lake REST API::
+
+  OMI_URL="http://192.168.100.100:8080"
+
+Run
+---
+
+ $ ./setup_venv.sh
+ $ ./manage.py runserver
+
+Known Issues
+------------
+
+The OMI Transaction Family and OMI API are not completely in sync.
+Therefor some fields are moved to the "ext" object in the responses.
+
+Also when writing to the API the Transaction Family requirements must
+be satisfied which is not always strictly compatible with the OMI API Specs.
+

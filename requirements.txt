@@ -1,0 +1,5 @@
+Django==1.11.1
+requests==2.18.1
+djangorestframework==3.6.3
+grpcio-tools==1.4.0
+protobuf3-to-dict==0.1.5
