@@ -11,6 +11,9 @@ Sawtooth Lake REST API::
 
   OMI_URL="http://192.168.100.100:8080"
 
+The OMI Transaction Family can be setup using the instruction in the
+omi-summer-lab repository.
+
 Run
 ---
 
@@ -21,8 +24,7 @@ Known Issues
 ------------
 
 The OMI Transaction Family and OMI API are not completely in sync.
-Therefor some fields are moved to the "ext" object in the responses.
+Some fields have been moved to the "ext" object in the responses.
 
 Also when writing to the API the Transaction Family requirements must
 be satisfied which is not always strictly compatible with the OMI API Specs.
-
