@@ -6,7 +6,7 @@ class OMIRouter(DefaultRouter):
     routes = [
         # List route.
         Route(
-            url=r'^{prefix}(;.+)?{trailing_slash}$',
+            url=r'^{prefix}{trailing_slash}(;.+)?$',
             mapping={
                 'get': 'list',
                 'post': 'create'
