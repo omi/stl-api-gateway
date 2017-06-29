@@ -14,10 +14,15 @@ Sawtooth Lake REST API::
 The OMI Transaction Family can be setup using the instruction in the
 omi-summer-lab repository.
 
+Setup
+-----
+
+ $ ./setup_venv.sh
+
 Run
 ---
 
- $ ./setup_venv.sh
+ $ source venv3/bin/activate
  $ ./manage.py runserver
 
 Known Issues
