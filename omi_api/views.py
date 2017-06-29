@@ -119,14 +119,14 @@ class IndividualsViewSet(OMISTLViewSet):
         Return a list of all individuals.
         """
 
-        client = OMIClient(settings.OMI_URL, settings.OMI_PRIVKEY)
+        client = OMIClient(settings.STL_REST_URL, settings.STL_PRIVKEY)
         return Response(self._filter_and_paginate(request, client.get_individuals()))
 
     def retrieve(self, request, pk=None):
         """
         Return an individual.
         """
-        client = OMIClient(settings.OMI_URL, settings.OMI_PRIVKEY)
+        client = OMIClient(settings.STL_REST_URL, settings.STL_PRIVKEY)
         try:
             return Response(self._to_json(client.get_individual(pk)))
         except HTTPError as exc:
@@ -138,7 +138,7 @@ class IndividualsViewSet(OMISTLViewSet):
         """
         Register an individual.
         """
-        client = OMIClient(settings.OMI_URL, settings.OMI_PRIVKEY)
+        client = OMIClient(settings.STL_REST_URL, settings.STL_PRIVKEY)
         status = client.set_individual(request.data)
         if status.wait_for_committed() == "COMMITTED":
             return Response(status=201, headers=self.headers)
@@ -161,14 +161,14 @@ class OrganizationsViewSet(OMISTLViewSet):
         Return a list of all organisations.
         """
 
-        client = OMIClient(settings.OMI_URL, settings.OMI_PRIVKEY)
+        client = OMIClient(settings.STL_REST_URL, settings.STL_PRIVKEY)
         return Response(self._filter_and_paginate(request, client.get_organizations()), headers=self.headers)
 
     def retrieve(self, request, pk=None):
         """
         Return an organisations.
         """
-        client = OMIClient(settings.OMI_URL, settings.OMI_PRIVKEY)
+        client = OMIClient(settings.STL_REST_URL, settings.STL_PRIVKEY)
         try:
             return Response(self._to_json(client.get_organization(pk)), headers=self.headers)
         except HTTPError as exc:
@@ -180,7 +180,7 @@ class OrganizationsViewSet(OMISTLViewSet):
         """
         Register an organisation.
         """
-        client = OMIClient(settings.OMI_URL, settings.OMI_PRIVKEY)
+        client = OMIClient(settings.STL_REST_URL, settings.STL_PRIVKEY)
         status = client.set_organization(request.data)
         if status.wait_for_committed() == "COMMITTED":
             return Response(status=201, headers=self.headers)
@@ -207,14 +207,14 @@ class WorksViewSet(OMISTLViewSet):
         """
         Return a list of all works.
         """
-        client = OMIClient(settings.OMI_URL, settings.OMI_PRIVKEY)
+        client = OMIClient(settings.STL_REST_URL, settings.STL_PRIVKEY)
         return Response(self._filter_and_paginate(request, client.get_works()), headers=self.headers)
 
     def retrieve(self, request, pk=None):
         """
         Return a work.
         """
-        client = OMIClient(settings.OMI_URL, settings.OMI_PRIVKEY)
+        client = OMIClient(settings.STL_REST_URL, settings.STL_PRIVKEY)
         try:
             return Response(self._to_json(client.get_work(pk)), headers=self.headers)
         except HTTPError as exc:
@@ -226,7 +226,7 @@ class WorksViewSet(OMISTLViewSet):
         """
         Register a work.
         """
-        client = OMIClient(settings.OMI_URL, settings.OMI_PRIVKEY)
+        client = OMIClient(settings.STL_REST_URL, settings.STL_PRIVKEY)
         status = client.set_work(request.data)
         if status.wait_for_committed() == "COMMITTED":
             return Response(status=201, headers=self.headers)
@@ -253,14 +253,14 @@ class RecordingsViewSet(OMISTLViewSet):
         """
         Return a list of all recording.
         """
-        client = OMIClient(settings.OMI_URL, settings.OMI_PRIVKEY)
+        client = OMIClient(settings.STL_REST_URL, settings.STL_PRIVKEY)
         return Response(self._filter_and_paginate(request, client.get_recordings()), headers=self.headers)
 
     def retrieve(self, request, pk=None):
         """
         Return a recording.
         """
-        client = OMIClient(settings.OMI_URL, settings.OMI_PRIVKEY)
+        client = OMIClient(settings.STL_REST_URL, settings.STL_PRIVKEY)
         try:
             return Response(self._to_json(client.get_recording(pk)), headers=self.headers)
         except HTTPError as exc:
@@ -272,7 +272,7 @@ class RecordingsViewSet(OMISTLViewSet):
         """
         Register a recording.
         """
-        client = OMIClient(settings.OMI_URL, settings.OMI_PRIVKEY)
+        client = OMIClient(settings.STL_REST_URL, settings.STL_PRIVKEY)
         data = dict(request.data)
         omi_stl_map = {
             'title': 'title',

@@ -131,13 +131,13 @@ REST_FRAMEWORK = {
     ]
 }
 
-OMI_URL = os.environ.get('OMI_URL', 'http://rest_api:8080')
-OMI_PRIVKEY_FILE = os.path.join(BASE_DIR, 'omi.privkey')
-if os.path.isfile(OMI_PRIVKEY_FILE):
-    with open(OMI_PRIVKEY_FILE) as f:
-        OMI_PRIVKEY = f.read()
+STL_REST_URL = os.environ.get('STL_REST_URL', 'http://rest_api:8080')
+STL_PRIVKEY_FILE = os.path.join(BASE_DIR, 'omi.privkey')
+if os.path.isfile(STL_PRIVKEY_FILE):
+    with open(STL_PRIVKEY_FILE) as f:
+        STL_PRIVKEY = f.read()
 else:
     import sawtooth_signing as signing
     OMI_PRIVKEY = signing.generate_privkey()
-    with open(OMI_PRIVKEY_FILE, "w") as f:
-        f.write(OMI_PRIVKEY)
+    with open(STL_PRIVKEY_FILE, "w") as f:
+        f.write(STL_PRIVKEY)
