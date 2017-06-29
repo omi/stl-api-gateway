@@ -3,8 +3,9 @@ stl-api-gateway
 
 Implementation of OMI API for the Sawtooth Lake OMI Transaction Family.
 
-Configure
----------
+
+Getting Started
+---------------
 
 Use the STL_REST_URL environment variable to point the application to the
 Sawtooth Lake REST API::
@@ -15,15 +16,27 @@ The OMI Transaction Family can be setup using the instruction in the
 omi-summer-lab repository.
 
 Setup
------
+~~~~~
 
  $ ./setup_venv.sh
 
 Run
----
+~~~
 
  $ source venv3/bin/activate
  $ ./manage.py runserver
+
+
+Sample Data
+-----------
+
+To get some sample data into Sawtooth Lake you can modify the tests in the
+omi-summer-lab repository: omi/tests/test_omi_smoke.py
+
+Change the URL to match your endpoint and run the test class with::
+
+    TestOMISmoke().test_omi_smoke()
+
 
 Known Issues
 ------------
