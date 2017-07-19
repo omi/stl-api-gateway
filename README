@@ -3,20 +3,6 @@ stl-api-gateway
 
 Implementation of OMI API for the Sawtooth Lake OMI Transaction Family.
 
-Install These Dependencies (for Mac)
----------------
-xcode command line tools
-autoconf
-automake
-python3
-libffi-dev
-libgmp-dev
-libssl-dev
-pkg-config
-libtool.
-
-for Linux, see /sawtooth-core/bin/install_packaging_deps
-
 
 Getting Started
 ---------------
@@ -28,6 +14,26 @@ Sawtooth Lake REST API::
 
 The OMI Transaction Family can be setup using the instruction in the
 omi-summer-lab repository.
+
+
+Dependencies
+~~~~~~~~~~~~
+
+Install these dependencies needed to compile Sawtooth Lake dependencies.
+
+On Debian or Ubuntu Linux:
+    $ apt-get install autoconf automake python3 libffi-dev libgmp-dev \
+                      libssl-dev pkg-config libtool
+
+On Mac:
+
+    $ xcode-select --install  # (For the xcode command line tools)
+    $ brew install autoconf automake python3 libffi libgmp libssl \
+                   pkg-config libtool
+
+For more information about these dependencies please look at the file
+`sawtooth-core/bin/install_packaging_deps` from Sawtooth Lake.
+
 
 Setup
 ~~~~~
